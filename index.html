@@ -25,7 +25,7 @@
 
     <section
       id="form-container"
-      class="flex justify-center items-center min-h-screen bg-gray-200 "
+      class="flex justify-center items-center min-h-screen bg-gray-200 hidden"
     >
       <form
         id="loginForm"
@@ -88,8 +88,25 @@
     </section>
 
     <!-- main page / home page  -->
-    <main id="homepage" class="hidden">
-   <h1>welcome to home page</h1>
+    <main id="homepage" class="">
+      <nav class="navbar bg-base-100 shadow-sm">
+        <div class="container mx-auto flex justify-between items-center">
+          <div class="flex items-center justify-center gap-2">
+            <img src="assets/github-logo.png" alt="" width="50" />
+            <h1 class="text-2xl font-semibold">Github Issues Tracker</h1>
+          </div>
+          <div class="flex gap-2 input-group">
+            <input
+              type="text"
+              placeholder="🔍 Search"
+              class="input border outline-none focus:outline-none w-24 md:w-auto"
+            />
+
+            <button class="btn btn-primary">+ New Issues</button>
+          </div>
+        </div>
+      </nav>
+      
     </main>
 
     <script src="./script/index.js"></script>
