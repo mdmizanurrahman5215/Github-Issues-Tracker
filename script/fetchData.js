@@ -1,3 +1,6 @@
+ 
+ let issues = []
+
 const fetchAllIssues = async () => {
   showLoading();
   try {
@@ -5,9 +8,9 @@ const fetchAllIssues = async () => {
       "https://phi-lab-server.vercel.app/api/v1/lab/issues",
     );
     const data = await response.json();
-    const issues = data.data;
+     issues = data.data;
     displayIssues(issues);
-    issueConter(issues)
+    issueConter(issues);
     console.log(issues);
   } catch (error) {
    console.log(error);
