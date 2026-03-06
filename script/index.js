@@ -6,6 +6,8 @@ const passworInput = document.getElementById("password");
 const issueCount = document.getElementById("issue-count");
 const issueList = document.getElementById("issues-list");
 const tabContainer = document.getElementById("tab-container");
+const searchInput = document.getElementById("search-input");
+const searchBtn = document.getElementById("search-btn");
 
 tabContainer.addEventListener("click", function (e) {
   e.stopPropagation();
@@ -24,3 +26,20 @@ tabContainer.addEventListener("click", function (e) {
   renderByTab(buttonText);
 });
 
+//  fetch by search 
+searchBtn.addEventListener("click", function(){
+let searchText = searchInput.value.trim()
+if(searchText){
+
+    fetchBysearch(searchText)
+}
+
+
+})
+
+searchInput.addEventListener("keyup", function(e){
+    const searchText = searchInput.value.trim()
+   if(e.key === "Enter"){
+     if(searchText)fetchBysearch(searchText)
+   }
+})

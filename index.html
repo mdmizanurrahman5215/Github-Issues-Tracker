@@ -25,7 +25,7 @@
 
     <section
       id="form-container"
-      class="flex justify-center items-center min-h-screen bg-gray-200 hidden"
+      class="flex justify-center items-center min-h-screen bg-gray-200 "
     >
       <form
         id="loginForm"
@@ -88,7 +88,7 @@
     </section>
 
     <!-- main page / home page  -->
-    <main id="homepage" class="">
+    <main id="homepage" class="hidden">
       <nav class="navbar bg-white shadow-sm">
         <div class="container mx-auto flex justify-between items-center">
           <div class="flex items-center justify-center gap-2">
@@ -98,13 +98,13 @@
             </h1>
           </div>
           <div class="flex gap-2">
-            <input
+            <input id="search-input"
               type="text"
               placeholder="🔍 Search"
               class="input border outline-none focus:outline-none w-34 md:w-auto"
             />
 
-            <button class="btn btn-primary">+ New Issues</button>
+            <button id="search-btn" class="btn btn-primary">+ New Issues</button>
           </div>
         </div>
       </nav>
@@ -161,7 +161,7 @@
           <!-- issues  -->
           <div
             id="issues-list"
-            class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6"
           >
             
           </div>
