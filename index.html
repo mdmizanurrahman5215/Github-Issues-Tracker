@@ -20,7 +20,7 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
+  <body class="bg-gray-200 h-screen">
     <!-- login page  -->
 
     <section
@@ -89,24 +89,93 @@
 
     <!-- main page / home page  -->
     <main id="homepage" class="">
-      <nav class="navbar bg-base-100 shadow-sm">
+      <nav class="navbar bg-white shadow-sm">
         <div class="container mx-auto flex justify-between items-center">
-          <div class="flex items-center justify-center gap-2">
+          <div class="flex items-center justify-center gap-2 ">
             <img src="assets/github-logo.png" alt="" width="50" />
-            <h1 class="text-2xl font-semibold">Github Issues Tracker</h1>
+            <h1 class="text-2xl font-semibold hidden sm:block">Github Issues Tracker</h1>
           </div>
-          <div class="flex gap-2 input-group">
+          <div class="flex gap-2 ">
             <input
               type="text"
               placeholder="🔍 Search"
-              class="input border outline-none focus:outline-none w-24 md:w-auto"
+              class="input border outline-none focus:outline-none w-34 md:w-auto"
             />
 
             <button class="btn btn-primary">+ New Issues</button>
           </div>
         </div>
       </nav>
-      
+      <div id="tab-container" class="container mx-auto bg-white shadow-md rounded-md mt-10 px-6 py-6">
+        <button class="btn btn-primary border border-gray-300 rounded-md px-8 py-1 mr-2 shadow-md cursor-pointer">All</button>
+        <button class="border border-gray-300 rounded-md px-8 py-1 mr-2 shadow-md cursor-pointer">Open</button>
+        <button class="border border-gray-300 rounded-md px-8 py-1 mr-2 shadow-md cursor-pointer">Closed</button>
+
+      </div>
+
+      <div id="issue-container" class="container mx-auto ">
+        <div class="flex justify-between items-center bg-white mt-6 px-6 py-4 rounded-md shadow-md">
+            <div class="flex items-center gap-2">
+               <div class="w-18 h-18 bg-purple-100 rounded-full flex justify-center items-center p-[10px]">
+                 <img src="./assets/Aperture.png" alt="" class="w-full">
+               </div>
+                <div>
+                    <h1 class="text-3xl font-semibold">50 Issues</h1>
+                    <h1 class="text-2xl"> Track and manage your project issues </h1>
+                </div>
+
+            </div>
+            <div class="flex justify-center items-center gap-4">
+                <div class="flex items-center justify-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-green-500" ></div>
+                    <p>Open</p>
+                </div>
+                 <div class="flex items-center justify-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-purple-500"></div>
+                    <p>Close</p>
+                 </div>
+            </div>
+
+        </div>
+
+        <div id="issues-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+
+            <div id="issues" class="bg-white p-6 rounded-md shadow-md space-y-6 border-t-4 border-t-green-500">
+                <div class="flex justify-between items-center">
+                    <img src="./assets/Open-Status.png" alt="" width="50">
+                    <h1 class="px-8 py-2 bg-red-100 font-semibold text-2xl rounded-full text-red-500">HIGH</h1>
+                </div>
+                <h1 class="text-2xl font-semibold">Fix navigation menu on mobile devices</h1>
+                <p class="line-clamp-2 text-xl">The navigation menu doesn't collapse properly on mobile devices...</p>
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-1 bg-red-100 text-red-500 px-4 py-2 rounded-full">
+                     <span> <i class="fa-solid fa-bug"></i></span>
+                        <h1 class="font-semibold">BUG</h1>
+
+                    </div>
+                    <div  class="flex items-center gap-1 bg-yellow-100 text-yellow-500 px-4 py-2 rounded-full ">
+                        <span><i class="fa-solid fa-futbol"></i></span>
+                        <h1 class="font-semibold">HELP WANTED</h1>
+
+                    </div>
+                </div>
+                <hr class="border-gray-400">
+                <div class="">
+                    <p class="text-xl text-gray-500">#1by john_doe</p>
+                    <p class="text-xl text-gray-500">1/15/2024</p>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
     </main>
 
     <script src="./script/index.js"></script>
