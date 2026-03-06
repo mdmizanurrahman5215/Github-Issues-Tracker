@@ -1,17 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Github Issues Tracker</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- tailwind + daisy ui linked  -->
-     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-<body>
-    <h1 class="text-3xl font-bold text-purple-700 text-center py-10">Github Issues Tracker</h1>
-    
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <!-- login page  -->
+
+    <section
+      id="form-container"
+      class="flex justify-center items-center min-h-screen bg-gray-200 "
+    >
+      <form
+        id="loginForm"
+        action=""
+        class="w-11/12 max-w-md bg-white shadow-md rounded-md px-6 py-10 space-y-6"
+      >
+        <header
+          id="logo-details"
+          class="flex justify-between items-center flex-col space-y-2"
+        >
+          <img src="assets/github-logo.png" alt="" />
+          <h1 class="text-3xl font-bold">Github Issues Tracker</h1>
+          <p>Sign in to manage your issues</p>
+        </header>
+        <div id="input-field">
+          <div class="flex flex-col gap-2">
+            <label for="name" class="text-xl font-semibold">Username</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter Username"
+              value="admin"
+              required
+              class="px-4 py-2 outline-none border-2 border-gray-300 rounded-md"
+            />
+            <p class="text-purple-700 font-bold">Default : admin</p>
+          </div>
+          <div class="flex flex-col gap-2">
+            <label for="password" class="text-xl font-semibold">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter password"
+              value="admin123"
+              required
+              class="px-4 py-2 outline-none border-2 border-gray-300 rounded-md"
+            />
+            <p class="text-purple-700 font-bold">Default : admin123</p>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="bg-[#4A00FF] w-full py-2 text-white text-2xl font-semibold rounded-md cursor-pointer"
+        >
+          Sign in
+        </button>
+        <div class="flex items-center my-6">
+          <hr class="flex-grow border-gray-300" />
+          <span class="px-2 text-gray-500 text-sm">OR</span>
+          <hr class="flex-grow border-gray-300" />
+        </div>
+        <div id="credentials" class="text-center">
+          <p>Demo:Credentials</p>
+          <p class="font-medium">Username : <span>admin</span></p>
+          <p class="font-medium">Password : <span>admin123</span></p>
+        </div>
+      </form>
+    </section>
+
+    <!-- main page / home page  -->
+    <main id="homepage" class="hidden">
+   <h1>welcome to home page</h1>
+    </main>
+
     <script src="./script/index.js"></script>
-</body>
+  </body>
 </html>
