@@ -1,4 +1,3 @@
-
 const showisseDetails = (issue) => {
   modalContainer.innerHTML = "";
 
@@ -25,7 +24,7 @@ const showisseDetails = (issue) => {
           <div class="flex items-center gap-2">
             <span class="${status == "open" ? "bg-green-500 text-white" : "bg-purple-500 text-white"} rounded-md px-4 py-1">${status == "open" ? "Opened" : "Closed"}</span>
             <div class="w-2 h-2 rounded-full bg-gray-500"></div>
-            <span>Opened by ${assignee}</span>
+            <span>Opened by ${author}</span>
             <div class="w-2 h-2 rounded-full bg-gray-500"></div>
             <span>${date.toLocaleDateString()}</span>
           </div>
@@ -51,11 +50,10 @@ const showisseDetails = (issue) => {
 
   modalContainer.appendChild(div);
 
-
   const modaldiv = div.querySelector(".label-container");
   modaldiv.innerHTML = "";
   labels.forEach((label) => {
-    console.log(label);
+    
     const p = document.createElement("p");
 
     p.innerText = label;
@@ -66,32 +64,15 @@ const showisseDetails = (issue) => {
       "rounded-md",
       "text-amber-800",
       "font-bold",
+      "uppercase",
     );
     modaldiv.appendChild(p);
-    modalContainer.classList.remove("hidden")
+    modalContainer.classList.remove("hidden");
 
     const closeBtn = div.querySelector("#close");
 
     closeBtn.addEventListener("click", () => {
-     modalContainer.classList.add("hidden")
+      modalContainer.classList.add("hidden");
     });
   });
-
-  console.log(issue);
 };
-
-// {
-//     "id": 1,
-//     "title": "Fix navigation menu on mobile devices",
-//     "description": "The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.",
-//     "status": "open",
-//     "labels": [
-//         "bug",
-//         "help wanted"
-//     ],
-//     "priority": "high",
-//     "author": "john_doe",
-//     "assignee": "jane_smith",
-//     "createdAt": "2024-01-15T10:30:00Z",
-//     "updatedAt": "2024-01-15T10:30:00Z"
-// }

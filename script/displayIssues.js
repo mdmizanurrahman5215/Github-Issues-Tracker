@@ -1,9 +1,7 @@
 const displayIssues = (array) => {
-  console.log(array);
-
   issueList.innerHTML = "";
   if (!array.length) {
-    console.log("no issues here");
+    alert("No Issue Found");
   }
 
   array.forEach((issue) => {
@@ -20,13 +18,12 @@ const displayIssues = (array) => {
       updatedAt,
     } = issue;
     const date = new Date(createdAt);
-    // console.log();
 
     const div = document.createElement("div");
     div.innerHTML = `
     <div
-              id="issues"
-              class="bg-white p-6 rounded-md shadow-md space-y-6 border-t-4  ${status == "open" ? "border-t-green-500" : "border-t-purple-500"}"
+              data-id="${id}"
+              class="issues bg-white p-6 rounded-md shadow-md space-y-6 border-t-4  ${status == "open" ? "border-t-green-500" : "border-t-purple-500"}"
             >
               <div class="flex justify-between items-center">
                 <img src="${status == "open" ? "./assets/Open-Status.png" : "assets/Closed- Status .png"}" alt="" width="50" />
@@ -57,29 +54,15 @@ const displayIssues = (array) => {
     labels.forEach((label) => {
       const div = document.createElement("div");
       div.innerHTML = `
-        <p class="bg-yellow-100 px-4 py-2 rounded-md text-yellow-600 uppercase">${label}</p>
+        <p class="bg-amber-200 px-4 py-2 rounded-md text-amber-800 uppercase">${label}</p>
         `;
       labeldiv.appendChild(div);
-    });
-
-    div.querySelector(".details").addEventListener("click", function (e) {
-      fetctByid(id);
     });
   });
 };
 
-// {
-//     "id": 1,
-//     "title": "Fix navigation menu on mobile devices",
-//     "description": "The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.",
-//     "status": "open",
-//     "labels": [
-//         "bug",
-//         "help wanted"
-//     ],
-//     "priority": "high",
-//     "author": "john_doe",
-//     "assignee": "jane_smith",
-//     "createdAt": "2024-01-15T10:30:00Z",
-//     "updatedAt": "2024-01-15T10:30:00Z"
-// }
+issueList.addEventListener("click", function (e) {
+  const cart = e.target.closest(".issues");
+  const cartId = cart.dataset.id;
+  fetctByid(cartId);
+});

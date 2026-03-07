@@ -9,7 +9,6 @@ const tabContainer = document.getElementById("tab-container");
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
 const modalContainer = document.getElementById("modal-container");
-// const modalContainer = document.getElementById("modal-container");
 
 tabContainer.addEventListener("click", function (e) {
   e.stopPropagation();
@@ -19,7 +18,7 @@ tabContainer.addEventListener("click", function (e) {
   if (!allowed.includes(buttonText)) return;
 
   const buttons = document.querySelectorAll("#tab-container button");
-  console.log(buttons);
+
   buttons.forEach((b) => {
     b.classList.remove("btn", "btn-primary");
   });
@@ -28,20 +27,17 @@ tabContainer.addEventListener("click", function (e) {
   renderByTab(buttonText);
 });
 
-//  fetch by search 
-searchBtn.addEventListener("click", function(){
-let searchText = searchInput.value.trim()
-if(searchText){
+//  fetch by search
+searchBtn.addEventListener("click", function () {
+  let searchText = searchInput.value.trim();
+  if (searchText) {
+    fetchBysearch(searchText);
+  }
+});
 
-    fetchBysearch(searchText)
-}
-
-
-})
-
-searchInput.addEventListener("keyup", function(e){
-    const searchText = searchInput.value.trim()
-   if(e.key === "Enter"){
-     if(searchText)fetchBysearch(searchText)
-   }
-})
+searchInput.addEventListener("keyup", function (e) {
+  const searchText = searchInput.value.trim();
+  if (e.key === "Enter") {
+    if (searchText) fetchBysearch(searchText);
+  }
+});

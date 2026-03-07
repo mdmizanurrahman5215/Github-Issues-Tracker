@@ -10,9 +10,8 @@ const fetchAllIssues = async () => {
     issues = data.data;
     displayIssues(issues);
     issueConter(issues);
-    console.log(issues);
   } catch (error) {
-    console.log(error);
+    alert("Something is wrong! Please try again");
   } finally {
     closeLoading();
   }
@@ -20,7 +19,6 @@ const fetchAllIssues = async () => {
 
 fetchAllIssues();
 
-//  const searchText = "Fix broken image uploads"
 const fetchBysearch = async (searchText) => {
   showLoading();
   try {
@@ -33,11 +31,12 @@ const fetchBysearch = async (searchText) => {
     displayIssues(searchData);
     issueConter(searchData);
   } catch (error) {
-    console.log(error);
+    alert("Something is wrong! Please try again");
   } finally {
     closeLoading();
   }
 };
+
 //   single issue
 
 const fetctByid = async (id) => {
@@ -48,11 +47,10 @@ const fetctByid = async (id) => {
     );
     const data = await response.json();
     const issue = data.data;
-   
 
     showisseDetails(issue);
   } catch (error) {
-    console.log(error);
+    alert("Something is wrong! Please try again");
   } finally {
     closeLoading();
   }
