@@ -20,12 +20,12 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="bg-gray-200 ">
+  <body class="bg-gray-200">
     <!-- login page  -->
 
     <section
       id="form-container"
-      class="flex justify-center items-center min-h-screen bg-gray-200 "
+      class="flex justify-center items-center min-h-screen bg-gray-200 hidden"
     >
       <form
         id="loginForm"
@@ -88,7 +88,7 @@
     </section>
 
     <!-- main page / home page  -->
-    <main id="homepage" class="hidden">
+    <main id="homepage" class="">
       <nav class="navbar bg-white shadow-sm">
         <div class="container mx-auto flex justify-between items-center">
           <div class="flex items-center justify-center gap-2">
@@ -98,13 +98,16 @@
             </h1>
           </div>
           <div class="flex gap-2">
-            <input id="search-input"
+            <input
+              id="search-input"
               type="text"
               placeholder="🔍 Search"
               class="input border outline-none focus:outline-none w-34 md:w-auto"
             />
 
-            <button id="search-btn" class="btn btn-primary">+ New Issues</button>
+            <button id="search-btn" class="btn btn-primary">
+              + New Issues
+            </button>
           </div>
         </div>
       </nav>
@@ -131,7 +134,7 @@
       </div>
       <!-- issue container  -->
 
-      <section id="issue-container" class="container mx-auto">
+      <section id="issue-container" class="container mx-auto ">
         <div id="issues-load" class="">
           <div
             class="flex justify-between items-center bg-white mt-6 px-6 py-4 rounded-md shadow-md"
@@ -143,7 +146,7 @@
                 <img src="./assets/Aperture.png" alt="" class="w-full" />
               </div>
               <div>
-                <h1 id="issue-count" class="text-3xl font-semibold"> Issues</h1>
+                <h1 id="issue-count" class="text-3xl font-semibold">Issues</h1>
                 <h1 class="text-2xl">Track and manage your project issues</h1>
               </div>
             </div>
@@ -162,9 +165,7 @@
           <div
             id="issues-list"
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6"
-          >
-            
-          </div>
+          ></div>
         </div>
         <!-- loading  -->
         <section
@@ -174,6 +175,9 @@
           <span class="loading loading-spinner loading-xl"></span>
         </section>
       </section>
+      <div id="modal-container" class="flex justify-center items-center h-screen fixed inset-0 bg-black/30 hidden">
+      
+      </div>
     </main>
 
     <script src="./script/index.js"></script>
@@ -183,6 +187,6 @@
     <script src="./script/displayIssues.js"></script>
     <script src="./script/counter.js"></script>
     <script src="./script/renderBytab.js"></script>
-
+    <script src="./script/modal.js"></script>
   </body>
 </html>

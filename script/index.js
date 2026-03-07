@@ -8,6 +8,8 @@ const issueList = document.getElementById("issues-list");
 const tabContainer = document.getElementById("tab-container");
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
+const modalContainer = document.getElementById("modal-container");
+// const modalContainer = document.getElementById("modal-container");
 
 tabContainer.addEventListener("click", function (e) {
   e.stopPropagation();
