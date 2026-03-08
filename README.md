@@ -14,7 +14,7 @@
 
 ## 3.What is the difference between map(), filter(), and forEach()?
 ### map()
-- transform array items and teturn new array
+- transform array items and return new array
 ### filter()
 - Select items based of condition and return a new array.
 ### forEach()
